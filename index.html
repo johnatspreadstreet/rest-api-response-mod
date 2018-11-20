@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <title>Rest API Response Mod</title>
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/skeleton.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/styles/monokai-sublime.css">
+  </head>
+  <body>
+
+    <main>
+
+        <section class="intro container">
+            <div class="row">
+                <div>
+                    <h4>Enter a URL to an accessible file or resource.</h4>
+                    <p>This can process JSON from RESTful services. If authentication is required, enter below.</p>
+                    <div>
+                        <form class="js-search-form">
+                            <div class="twelve columns">
+                                <label for="query-url">Query URL:</label>
+                                <textarea class="u-full-width query-url-box" name="query-url" id=""></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="six columns">
+                                    <label for="data-format">Data Format</label>
+                                    <select class="u-full-width" name="data-format" id="">
+                                        <option value="json">JSON</option>
+                                    </select>
+                                </div>
+                                <div class="six columns">
+                                    <label for="method">Method</label>
+                                    <select class="u-full-width" name="method" id="">
+                                        <option value="get">GET</option>
+                                    </select>
+                                </div>
+                                <input class="button-primary button-submit" type="submit" value="Submit">
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="six columns">
+                                <pre>
+                                    <code class="hljs json response">
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="six columns">
+                                <pre>
+                                    <code class="hljs markdown nodes">
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>

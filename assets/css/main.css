@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+code {
+    font-size: 16px;
+}
+
+.intro {
+    border-top: 1px solid #eee;
+    padding: 4rem 0;
+    margin-bottom: 0;
+}
