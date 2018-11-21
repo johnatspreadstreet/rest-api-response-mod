@@ -26,7 +26,7 @@ function getUrlVars(url) {
 function buildParams() {
     $('.build-params').on('click', function(e) {
         e.preventDefault();
-        const queryTarget = $(event.currentTarget).find('.query-url-box');
+        const queryTarget = $('main').find('.query-url-box');
         let boxValue = queryTarget.val();
         console.log(boxValue);
         console.log(getUrlVars(boxValue));
