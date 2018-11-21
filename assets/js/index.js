@@ -125,7 +125,6 @@ function resultsOnSubmit() {
     const queryTarget = $(event.currentTarget).find('.query-url-box');
     let boxValue = queryTarget.val();
     console.log(boxValue);
-    queryTarget.val('');
     getDataFromURL(boxValue, displayAPIResponse);
   });
 }
