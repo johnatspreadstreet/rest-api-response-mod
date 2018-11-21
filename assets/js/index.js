@@ -52,15 +52,12 @@ function buildParams() {
         const queryTarget = $('main').find('.query-url-box');
         let boxValue = queryTarget.val();
         let params = getUrlVars(boxValue);
+        $('.parameters').empty();
         for (let param in params) {
           console.log(param);
           console.log(params);
           console.log(params[param]);
-          if(params.hasOwnProperty(param)) {
-            let value = params[param];
-            //do something with value;
-            $('.parameters').append(queryParamTemplate(param, value));
-          }
+          $('.parameters').append(queryParamTemplate(params[param], param));
         }
     });
 }
