@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="eleven columns">
-                                        <input class="u-full-width query-url-box" type="text" name="query-url">
+                                        <input class="u-full-width query-url-box" type="text" name="query-url" value="https://any-api.com/?query=crypto&tag=backend">
                                     </div>
                                     <div class="one column">
                                         <button class="build-params"><i class="fas fa-code"></i></button>
@@ -60,24 +60,26 @@
                                         <label for="query-params">Query Parameters</label>
                                     </div>
                                 </div>
-                                <div class="row u-max-full-width no-wrap">
-                                    <div class="four columns">
-                                        <input class="u-full-width" id="param-name" type="text" placeholder="Name">
+                                <section class="parameters">
+                                    <div class="row u-max-full-width no-wrap">
+                                        <div class="four columns">
+                                            <input class="u-full-width" id="param-name" type="text" placeholder="Name">
+                                        </div>
+                                        <div class="four columns">
+                                            <input class="u-full-width" id="param-value" type="text" placeholder="Value">
+                                        </div>
+                                        <div class="four columns">
+                                            <select name="types" id="">
+                                                <option value=""></option>
+                                                <option value="query">Query</option>
+                                                <option value="cookie">Cookie</option>
+                                                <option value="header">Header</option>
+                                            </select>
+                                            <button class="minus" disabled><i class="fas fa-minus u-center-block"></i></button>
+                                            <button class="plus"><i class="fas fa-plus u-center-block"></i></button>
+                                        </div>
                                     </div>
-                                    <div class="four columns">
-                                        <input class="u-full-width" id="param-value" type="text" placeholder="Value">
-                                    </div>
-                                    <div class="four columns">
-                                        <select name="types" id="">
-                                            <option value=""></option>
-                                            <option value="query">Query</option>
-                                            <option value="cookie">Cookie</option>
-                                            <option value="header">Header</option>
-                                        </select>
-                                        <button class="minus" disabled><i class="fas fa-minus u-center-block"></i></button>
-                                        <button class="plus"><i class="fas fa-plus u-center-block"></i></button>
-                                    </div>
-                                </div>
+                                </section>
                                 <div class="u-center-block">
                                     <label for="full-request">Full Request:</label>
                                     <p class="u-text-center">Text</p>

@@ -23,17 +23,47 @@ function getUrlVars(url) {
     return params;
 }
 
+function queryParamTemplate(paramName, paramValue) {
+  return `
+  <div class="row u-max-full-width no-wrap">
+    <div class="four columns">
+        <input class="u-full-width" id="param-name" type="text" placeholder="Name" value="${paramName}">
+    </div>
+    <div class="four columns">
+        <input class="u-full-width" id="param-value" type="text" placeholder="Value" value="${paramValue}">
+    </div>
+    <div class="four columns">
+        <select name="types" id="">
+            <option value="query">Query</option>
+            <option value=""></option>
+            <option value="cookie">Cookie</option>
+            <option value="header">Header</option>
+        </select>
+        <button class="minus" disabled><i class="fas fa-minus u-center-block"></i></button>
+        <button class="plus"><i class="fas fa-plus u-center-block"></i></button>
+    </div>
+  </div>
+  `;
+}
+
 function buildParams() {
     $('.build-params').on('click', function(e) {
         e.preventDefault();
         const queryTarget = $('main').find('.query-url-box');
         let boxValue = queryTarget.val();
-        console.log(boxValue);
-        console.log(getUrlVars(boxValue));
-    })
+        let params = getUrlVars(boxValue);
+        for (let param in params) {
+          console.log(param);
+          console.log(params);
+          console.log(params[param]);
+          if(params.hasOwnProperty(param)) {
+            let value = params[param];
+            //do something with value;
+            $('.parameters').append(queryParamTemplate(param, value));
+          }
+        }
+    });
 }
-
-console.log(getUrlVars('https://www.googleapis.com/youtube/v3/search?part=snippet&pageToken=CAUQAA&q=warcraft&type=video&key=AIzaSyAFBaf7iZdFuLJOgQ224GIWuMQ4Z2dDM2g'));
 
 function getDataFromYoutube(query, callback) {
   // This function will retrieve the data from the Youtube API
