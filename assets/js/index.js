@@ -57,7 +57,7 @@ function buildParams() {
           console.log(param);
           console.log(params);
           console.log(params[param]);
-          $('.parameters').append(queryParamTemplate(params[param], param));
+          $('.parameters').append(queryParamTemplate(param, params[param]));
         }
     });
 }
