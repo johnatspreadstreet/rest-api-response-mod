@@ -26,8 +26,8 @@ function getDataFromYoutube(query, callback) {
 }
 
 function getDataFromURL(url, callback) {
-    // This function will retrieve the data from the Youtube API
-    $.getJSON(url, callback);
+  // This function will retrieve the data from the Youtube API
+  $.getJSON(url, callback);
 }
 
 let fullArray = [];
@@ -65,8 +65,7 @@ function responseTemplate(data) {
 }
 
 function displayAPIResponse(data) {
-    $('.nodes').empty();
-    let results = responseTemplate(data);
+  let results = responseTemplate(data);
   fullTraversal(data);
   $('.response').html(results);
   $('.nodes').html(fullArray);
@@ -74,25 +73,25 @@ function displayAPIResponse(data) {
 }
 
 function resultsOnSubmit() {
-    $('.js-search-form').submit(function(event) {
-        event.preventDefault();
-        const queryTarget = $(event.currentTarget).find('.query-url-box');
-        let boxValue = queryTarget.val();
-        console.log(boxValue);
-        queryTarget.val('');
-        getDataFromURL(boxValue, displayAPIResponse);
-    });
+  $('.js-search-form').submit(function(event) {
+    event.preventDefault();
+    const queryTarget = $(event.currentTarget).find('.query-url-box');
+    let boxValue = queryTarget.val();
+    console.log(boxValue);
+    queryTarget.val('');
+    getDataFromURL(boxValue, displayAPIResponse);
+  });
 }
 
-function renderResults() {
-  $('main').html(getDataFromYoutube('warcraft', displayAPIResponse));
-}
+// function renderResults() {
+//   $('main').html(getDataFromYoutube('warcraft', displayAPIResponse));
+// }
 
 function runFunctions() {
   processor();
   traverse();
   fullTraversal();
-  renderResults();
+  // renderResults();
   resultsOnSubmit();
 }
 

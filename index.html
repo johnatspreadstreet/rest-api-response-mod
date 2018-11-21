@@ -13,46 +13,67 @@
   <body>
 
     <main>
+        <div class="container">
+            <header class="header">
+                <h2 class="title">Easily convert JSON to data frames</h2>
+            </header>
+        </div>
 
-        <section class="intro container">
-            <div class="row">
-                <div>
-                    <h4>Enter a URL to an accessible file or resource.</h4>
-                    <p>This can process JSON from RESTful services. If authentication is required, enter below.</p>
+        <section class="section">
+            <div class="container">
+                <div class="row">
                     <div>
-                        <form class="js-search-form">
-                            <div class="twelve columns">
-                                <label for="query-url">Query URL:</label>
-                                <textarea class="u-full-width query-url-box" name="query-url" id=""></textarea>
-                            </div>
-                            <div class="row">
-                                <div class="six columns">
-                                    <label for="data-format">Data Format</label>
-                                    <select class="u-full-width" name="data-format" id="">
-                                        <option value="json">JSON</option>
-                                    </select>
+                        <h4>Enter a URL to an accessible file or resource.</h4>
+                        <p>This can process JSON from RESTful services. If authentication is required, enter below.</p>
+                        <div>
+                            <form class="js-search-form">
+                                <div class="twelve columns">
+                                    <label for="query-url">Query URL:</label>
+                                    <textarea class="u-full-width query-url-box" name="query-url" id=""></textarea>
                                 </div>
-                                <div class="six columns">
-                                    <label for="method">Method</label>
-                                    <select class="u-full-width" name="method" id="">
-                                        <option value="get">GET</option>
-                                    </select>
+                                <div class="row">
+                                    <div class="six columns">
+                                        <label for="data-format">Data Format</label>
+                                        <select class="u-full-width" name="data-format" id="">
+                                            <option value="json">JSON</option>
+                                        </select>
+                                    </div>
+                                    <div class="six columns">
+                                        <label for="method">Method</label>
+                                        <select class="u-full-width" name="method" id="">
+                                            <option value="get">GET</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="twelve columns">
+                                        <label for="query-params">Query Parameters</label>
+                                    </div>
+                                    <div class="twelve columns">
+                                        <input type="text" placeholder="Name">
+                                        <input type="text" placeholder="Value">
+                                        <select name="types" id="">
+                                            <option value="query">Query</option>
+                                            <option value="cookie">Cookie</option>
+                                            <option value="header">Header</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <input class="button-primary button-submit" type="submit" value="Submit">
-                            </div>
-                        </form>
-                        <div class="row">
-                            <div class="six columns">
-                                <pre>
-                                    <code class="hljs json response">
-                                    </code>
-                                </pre>
-                            </div>
-                            <div class="six columns">
-                                <pre>
-                                    <code class="hljs markdown nodes">
-                                    </code>
-                                </pre>
+                            </form>
+                            <div class="row">
+                                <div class="six columns">
+                                    <pre>
+                                        <code class="hljs json response">
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="six columns">
+                                    <pre>
+                                        <code class="hljs markdown nodes">
+                                        </code>
+                                    </pre>
+                                </div>
                             </div>
                         </div>
                     </div>
