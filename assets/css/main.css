@@ -16,3 +16,29 @@ code {
     margin-top: 6rem;
     text-align: center;
 }
+
+button:disabled {
+    background-color: rgba(206, 206, 206, 0.6);
+    color: #ffffff;
+    cursor: default;
+    pointer-events:none;
+}
+
+.u-center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.build-params {
+    background: #1EAEDB;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}

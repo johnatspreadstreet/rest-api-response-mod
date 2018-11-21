@@ -15,6 +15,26 @@ function createChannelLink(id) {
   return link;
 }
 
+function getUrlVars(url) {
+    let params = {};
+    let parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        params[key] = value;
+    });
+    return params;
+}
+
+function buildParams() {
+    $('.build-params').on('click', function(e) {
+        e.preventDefault();
+        const queryTarget = $(event.currentTarget).find('.query-url-box');
+        let boxValue = queryTarget.val();
+        console.log(boxValue);
+        console.log(getUrlVars(boxValue));
+    })
+}
+
+console.log(getUrlVars('https://www.googleapis.com/youtube/v3/search?part=snippet&pageToken=CAUQAA&q=warcraft&type=video&key=AIzaSyAFBaf7iZdFuLJOgQ224GIWuMQ4Z2dDM2g'));
+
 function getDataFromYoutube(query, callback) {
   // This function will retrieve the data from the Youtube API
   const queryList = {
@@ -93,6 +113,7 @@ function runFunctions() {
   fullTraversal();
   // renderResults();
   resultsOnSubmit();
+  buildParams();
 }
 
 $(runFunctions);

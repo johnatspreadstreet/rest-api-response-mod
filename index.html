@@ -9,6 +9,7 @@
     <link href="assets/css/normalize.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/skeleton.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="assets/css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body>
 
@@ -27,9 +28,18 @@
                         <p>This can process JSON from RESTful services. If authentication is required, enter below.</p>
                         <div>
                             <form class="js-search-form">
-                                <div class="twelve columns">
-                                    <label for="query-url">Query URL:</label>
-                                    <textarea class="u-full-width query-url-box" name="query-url" id=""></textarea>
+                                <div class="row">
+                                    <div class="twelve columns">
+                                        <label for="query-url">Query URL:</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="eleven columns">
+                                        <input class="u-full-width" type="text" name="query-url">
+                                    </div>
+                                    <div class="one column">
+                                        <button class="build-params"><i class="fas fa-code"></i></button>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="six columns">
@@ -49,15 +59,28 @@
                                     <div class="twelve columns">
                                         <label for="query-params">Query Parameters</label>
                                     </div>
-                                    <div class="twelve columns">
-                                        <input type="text" placeholder="Name">
-                                        <input type="text" placeholder="Value">
+                                </div>
+                                <div class="row u-max-full-width no-wrap">
+                                    <div class="four columns">
+                                        <input class="u-full-width" id="param-name" type="text" placeholder="Name">
+                                    </div>
+                                    <div class="four columns">
+                                        <input class="u-full-width" id="param-value" type="text" placeholder="Value">
+                                    </div>
+                                    <div class="four columns">
                                         <select name="types" id="">
+                                            <option value=""></option>
                                             <option value="query">Query</option>
                                             <option value="cookie">Cookie</option>
                                             <option value="header">Header</option>
                                         </select>
+                                        <button class="minus" disabled><i class="fas fa-minus u-center-block"></i></button>
+                                        <button class="plus"><i class="fas fa-plus u-center-block"></i></button>
                                     </div>
+                                </div>
+                                <div class="u-center-block">
+                                    <label for="full-request">Full Request:</label>
+                                    <p class="u-text-center">Text</p>
                                 </div>
                                 <input class="button-primary button-submit" type="submit" value="Submit">
                             </form>
