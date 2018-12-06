@@ -16,11 +16,11 @@ function createChannelLink(id) {
 }
 
 function getUrlVars(url) {
-    let params = {};
-    let parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        params[key] = value;
-    });
-    return params;
+  let params = {};
+  let parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    params[key] = value;
+  });
+  return params;
 }
 
 function queryParamTemplate(paramName, paramValue) {
@@ -47,19 +47,19 @@ function queryParamTemplate(paramName, paramValue) {
 }
 
 function buildParams() {
-    $('.build-params').on('click', function(e) {
-        e.preventDefault();
-        const queryTarget = $('main').find('.query-url-box');
-        let boxValue = queryTarget.val();
-        let params = getUrlVars(boxValue);
-        $('.parameters').empty();
-        for (let param in params) {
-          console.log(param);
-          console.log(params);
-          console.log(params[param]);
-          $('.parameters').append(queryParamTemplate(param, params[param]));
-        }
-    });
+  $('.build-params').on('click', function(e) {
+    e.preventDefault();
+    const queryTarget = $('main').find('.query-url-box');
+    let boxValue = queryTarget.val();
+    let params = getUrlVars(boxValue);
+    $('.parameters').empty();
+    for (let param in params) {
+      console.log(param);
+      console.log(params);
+      console.log(params[param]);
+      $('.parameters').append(queryParamTemplate(param, params[param]));
+    }
+  });
 }
 
 function getDataFromYoutube(query, callback) {
